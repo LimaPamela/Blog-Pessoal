@@ -53,8 +53,8 @@ INDEX VERSION 1.131+C:\Users\Eu\Desktop\Blog Pessoal\.metadata\.plugins\org.ecli
 3567293340.index
 1003463424.index
 1865797976.index
-2434666335.index
 2812477899.index
+2434666335.index
 1254659271.index
 774339110.index
 112778219.index
@@ -79,8 +79,8 @@ INDEX VERSION 1.131+C:\Users\Eu\Desktop\Blog Pessoal\.metadata\.plugins\org.ecli
 4185001396.index
 275022471.index
 4111201545.index
-2664123581.index
 132499169.index
+2580704094.index
 536076498.index
 720309473.index
 1291542469.index

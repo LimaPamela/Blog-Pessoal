@@ -1,7 +1,0 @@
-package org.generation.blog_pessoal.model;
-
-public class GerationType {
-
-	public static final String IDENTITY = null;
-
-}
