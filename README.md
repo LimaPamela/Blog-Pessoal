@@ -24,6 +24,7 @@ O Projeto será composto por 3 Recursos (*Conjunto de Classes e Interfaces respo
 
 Cada Recurso irá gerar uma tabela no Banco de dados da aplicação. A Classe auxiliar não irá gerar uma tabela no Banco de dados da aplicação porquê ela servirá de Classe auxiliar na implementação da Segurança da aplicação. Os Recursos serão implementados na mesma sequência da tabela acima. Veja o Diagrama de Entidade e Relacionamentos do Projeto Blog Pessoal completo na figura abaixo:
 
-Documentação: https://github.com/rafaelq80/cookbook_spring/blob/main/03_spring/04.md
+
 <div align="center"><img src="https://i.imgur.com/4E1xYYx.png" title="source: imgur.com" /></div>
 
+Documentação: https://github.com/rafaelq80/cookbook_spring/blob/main/03_spring/04.md
