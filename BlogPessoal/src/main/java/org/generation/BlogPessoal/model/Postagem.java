@@ -16,11 +16,17 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.Getter;
+import lombok.Setter;
+
 //indica ao spring que o objeto abaixo vai ser uma tabela no banco de dados
 @Entity
 
 //dar um nome para a tabela a ser criada. Sem ela a tabela é criada com o mesmo nome do objeto
 @Table(name="tb_postagens")
+
+@Getter
+@Setter
 public class Postagem {
 	
 	// indica que o id da tabela será uma chave primaria
@@ -45,39 +51,11 @@ public class Postagem {
     @ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
-
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public String getTitulo() {
-        return titulo;
-    }
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-    public String getTexto() {
-        return texto;
-    }
-    public void setTexto(String texto) {
-        this.texto = texto;
-    }
-    public LocalDateTime getData() {
-        return data;
-    }
-    public void setData(LocalDateTime data) {
-        this.data = data;
-    }
     
-    public Tema getTema() {
-		return tema;
-	}
+    @ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Usuario usuario;
+ 
 
-	public void setTema(Tema tema) {
-		this.tema = tema;
-	}
-	
 	
 }

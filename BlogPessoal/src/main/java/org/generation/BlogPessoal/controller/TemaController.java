@@ -5,9 +5,7 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
-import org.generation.BlogPessoal.model.Postagem;
 import org.generation.BlogPessoal.model.Tema;
-import org.generation.BlogPessoal.repository.PostagemRepository;
 import org.generation.BlogPessoal.repository.TemaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,8 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
-
-
 
 @RestController
 @RequestMapping("/tema")
@@ -48,22 +44,21 @@ public class TemaController {
 
 	}
 	@GetMapping("/descricao/{descricao}")
-	public ResponseEntity<List<Tema>> getByTitulo(@PathVariable String descricao){
-		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(descricao));
+	public ResponseEntity<List<Tema>> getByTitulo(@PathVariable Long descricao){
+		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(descricao));
 		
 	}
 	
 	@PostMapping
 	public ResponseEntity<Tema> post(@Valid @RequestBody Tema tema){
-		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(repository.save(tema));
+		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
 	}
 	
 	@PutMapping
 	public ResponseEntity<Tema> put(@Valid @RequestBody Tema tema){
 		return repository.findById(tema.getId())
-				.map(resposta -> ResponseEntity.status(HttpStatus.OK)
-				.body(repository.save(tema)))
+				.map(resposta -> ResponseEntity.status(HttpStatus.CREATED)
+				.body (repository.save(tema)))
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
 	
@@ -71,10 +66,8 @@ public class TemaController {
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id) {
 		Optional<Tema> tema = repository.findById(id);
-				
 				if(tema.isEmpty())
 					throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-				
 				repository.deleteById(id);
 	}
 }	

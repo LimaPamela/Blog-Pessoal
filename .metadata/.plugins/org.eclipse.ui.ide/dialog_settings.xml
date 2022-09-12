@@ -15,4 +15,6 @@
 	</section>
 	<section name="NewWizardAction">
 	</section>
+	<section name="org.eclipse.ui.internal.views.markers.FiltersConfigurationDialog">
+	</section>
 </section>
