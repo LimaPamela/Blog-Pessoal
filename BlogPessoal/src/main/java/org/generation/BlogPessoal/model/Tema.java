@@ -2,7 +2,6 @@ package org.generation.BlogPessoal.model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,7 +28,7 @@ public class Tema {
 	@NotNull(message="O atributo descrição é obrigatório")
 	private String descricao;
 	
-	@OneToMany(mappedBy = "tema",cascade = CascadeType.ALL)
+	@OneToMany
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
 

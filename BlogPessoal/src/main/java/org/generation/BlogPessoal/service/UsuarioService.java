@@ -23,21 +23,13 @@ public class UsuarioService {
 
 		if (usuarioRepository.findByUsuario(usuario.getUsuario()).isPresent())
 			return Optional.empty();
-// criptografa a senha digitada pelo usuario antes de mandar o objeto para 
+
 		usuario.setSenha(criptografarSenha(usuario.getSenha()));
-// manda o objeto de usuário para o banco de dados com a senha criptografada
+
 		return Optional.of(usuarioRepository.save(usuario));
 
 	}
-//função que criptografa a senha do usuario
-	private String criptografarSenha(String senha) {
-//semelhante ao Scanner(); do Java
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-//usando o método de bcrypt que criptografa a senha digitada e retorna a senha criptografada
-		return encoder.encode(senha);
 
-	}
-//função que utiliza um usuario
 	public Optional<Usuario> atualizarUsuario(Usuario usuario) {
 
 		if (usuarioRepository.findById(usuario.getId()).isPresent()) {
@@ -81,6 +73,14 @@ public class UsuarioService {
 
 	}
 
+	private String criptografarSenha(String senha) {
+
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+		return encoder.encode(senha);
+
+	}
+
 	private boolean compararSenhas(String senhaDigitada, String senhaBanco) {
 
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -96,4 +96,5 @@ public class UsuarioService {
 		return "Basic " + new String(tokenBase64);
 
 	}
+
 }

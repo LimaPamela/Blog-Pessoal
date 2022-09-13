@@ -20,8 +20,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 
-@Setter
 @Getter
+@Setter
 @Entity
 @Table(name = "tb_usuarios")
 public class Usuario {
@@ -47,5 +47,6 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
+
 	
 }
