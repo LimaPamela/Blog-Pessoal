@@ -13,9 +13,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -48,5 +46,21 @@ public class Usuario {
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 
-	
+	public Usuario(Long id, @NotNull(message = "O atributo Nome é Obrigatório") String nome,
+			@NotNull @Email(message = "O Atributo Usuário deve ser um email válido!") String usuario,
+			@NotBlank(message = "O atributo Senha é obrigatório") @Size(min = 8, message = "A Senha deve ter no mínimo 8 caracteres") String senha,
+			@Size(max = 5000, message = "O link da foto não pode ser maior do que 5000 caracteres") String foto,
+			List<Postagem> postagem) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.foto = foto;
+		this.postagem = postagem;
+		
+	}
+
+	public Usuario() {
+	}
 }
