@@ -31,8 +31,8 @@ public class Usuario {
 	@NotNull(message = "O atributo Nome é Obrigatório")
 	private String nome;
 	
-	@NotNull
-	@Email(message= "O Atributo Usuário deve ser um email válido!")
+	@NotNull(message = "O Atributo Usuário é Obrigatório!")
+	@Email(message = "O Atributo Usuário deve ser um email válido!")
 	private String usuario;
 	
 	@NotBlank(message = "O atributo Senha é obrigatório")
