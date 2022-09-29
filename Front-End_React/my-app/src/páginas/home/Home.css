@@ -1,0 +1,16 @@
+body {
+  background-color: #F3F5F7;
+}
+
+.titulo {
+  color: #BE36B3;
+  text-align: center;
+}
+
+.img1 {
+  width: 400px;
+  height: 300px;
+  display: block;
+  margin: 0px auto;
+  border: 1px solid;
+}
