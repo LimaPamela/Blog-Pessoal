@@ -1,5 +1,13 @@
 {
   "configurations": [
+    
+    {
+      "type": "java",
+      "name": "Launch BlogPessoalApplication",
+      "request": "launch",
+      "mainClass": "org.generation.BlogPessoal.BlogPessoalApplication",
+      "projectName": "BlogPessoal (2)"
+    },
     {
       "type": "java",
       "name": "Spring Boot-BlogPessoalApplication<BlogPessoal>",
